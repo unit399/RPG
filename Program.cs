@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using RPG.Data;
 using RPG.Services.AuthService;
 using RPG.Services.CharacterService;
+using RPG.Services.FightService;
 using RPG.Services.WeaponService;
 using Swashbuckle.AspNetCore.Filters;
 
@@ -32,6 +33,7 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ICharacterService, CharacterService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IWeaponService, WeaponService>();
+builder.Services.AddScoped<IFightService, FightService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
